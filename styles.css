@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(169, 215, 245);
+    color: aliceblue;
+}
+.navbar{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    
+}
+.navbar a{
+    color: aliceblue;
+    text-decoration: none;
+}
