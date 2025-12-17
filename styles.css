@@ -4,19 +4,221 @@
     box-sizing: border-box;
 }
 body {
-    background-color: rgb(169, 215, 245);
+    background-color: rgb(255, 255, 255);
     color: aliceblue;
 }
-.navbar{
-    background-color: black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px;
-    
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -100px;
+  width: 80px;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 25px;
+  text-align: center;
+  color: aliceblue;
+  transition: ease-in-out 0.3s;
+}
+.navbar span{
+    font-size: 15px;
+    margin: 10px;
+    margin-bottom: 100px;
+}
+
+.navbar.showNav {
+  left: 0; 
 }
 .navbar a{
     color: aliceblue;
     text-decoration: none;
+}
+/* From Uiverse.io by vinodjangid07 */ 
+#checkbox {
+  display: none;
+}
+
+.toggle {
+ position: fixed;
+    top: 20px;
+    right: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(176, 92, 255);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+/* .menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0f172a;
+    border-radius: 15px;
+    z-index: 1000;
+} */
+
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    color: black;
+}
+
+.imageHero{
+    width:90%;
+    height: 30%;
+    margin-top: 20px;
+    border-radius: 20px;
+     box-shadow: 2px 2px 2px 2px black;
+}
+.hero p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+}
+.logoHome{
+    color: black;
+}
+.BoxHome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px black;
+    padding: 1em;
+    margin: 1em;
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.BoxHome:hover {
+    box-shadow: 3px 3px 6px black;
+    transform: translateY(-2px);    
+}
+
+.BoxHome span{
+    font-size: 30px;
+    margin: 10px;
+}
+
+
+
+@media (min-width: 700px) {
+  .imageHero {
+    width: 45em;
+    height: 30em;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 3px black;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    color: black;
+  }
+
+  .hero p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    margin: 15px;
+    max-width: 30em;
+  }
+
+  .logoHome{
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+  }
+  .BoxHome {
+    width: 40em;
+    height: 5em;
+    max-width: 40em;
+    max-height: 20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 30px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px black;
+    padding: 1em;
+    margin: 1em;
+    transition: box-shadow 0.3s ease-in-out; 
+}
+
+.BoxHome:hover {
+    box-shadow: 3px 3px 6px black;
+    transform: translateY(-2px);    
+}
+
+.BoxHome span{
+    font-size: 30px;
+    margin: 10px;
+}
+
 }
