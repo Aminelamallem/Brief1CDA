@@ -142,12 +142,33 @@ if (profilName && profilEmail) {
 
 
 const slides = [
-    { img: "profilImages/abdul.png", text: "Super expérience ! Abdul a adoré le programme et a bien progressé.", stars: 5 },
-    { img: "profilImages/jerome.png", text: "Excellent coaching, très motivant ! Jerome est ravi.", stars: 4 },
-    { img: "profilImages/muhammad.png", text: "Muhammad a trouvé ça top, très satisfait des résultats.", stars: 5 },
-    { img: "profilImages/sophia.png", text: "Sophia recommande vivement, vraiment inspirant et persévérant !", stars: 5 },
-    { img: "profilImages/john.png", text: "John a adoré, formateur efficace et sympathique.", stars: 4 }
+  {
+    img: "profilImages/abdul.png",
+    text: "Super expérience chez White Wrestling ! Abdul a énormément progressé grâce à un encadrement sérieux et motivant. Les entraînements sont intenses, bien structurés et adaptés à tous les niveaux.",
+    stars: 5
+  },
+  {
+    img: "profilImages/jerome.png",
+    text: "Excellent coaching et très bonne ambiance. Jerome a particulièrement apprécié la pédagogie des coachs et la motivation transmise à chaque séance. Une salle idéale pour progresser en lutte.",
+    stars: 4
+  },
+  {
+    img: "profilImages/muhammad.png",
+    text: "Muhammad est très satisfait de son expérience. Les entraînements sont de qualité, les conseils personnalisés et les résultats sont rapidement visibles, aussi bien sur le plan physique que technique.",
+    stars: 5
+  },
+  {
+    img: "profilImages/sophia.png",
+    text: "Sophia recommande vivement White Wrestling. Une salle inspirante où l’on progresse à son rythme, dans le respect, la discipline et la persévérance, avec un excellent esprit d’équipe.",
+    stars: 5
+  },
+  {
+    img: "profilImages/john.png",
+    text: "John a adoré l’approche des coachs, à la fois professionnels et accessibles. Les séances sont efficaces, bien encadrées et adaptées aux objectifs de chacun.",
+    stars: 4
+  }
 ];
+
 
 let currentIndex = 0;
 
