@@ -7,6 +7,7 @@ const navbar = document.querySelector('.navbar');
 const navLogin = document.querySelector('#navLogin');
 const navRegister = document.querySelector('#navRegister');
 const navProfil = document.querySelector('#navProfil');
+const navLogout = document.querySelector('#navLogout');
 
 const formLogin = document.querySelector('#formLogin');
 const formRegister = document.querySelector('#formRegister');
@@ -14,9 +15,12 @@ const formRegister = document.querySelector('#formRegister');
 const profilName = document.querySelector('#profilName');
 const profilEmail = document.querySelector('#profilEmail');
 
+const sliderDiv = document.getElementById('slider');
+
+
 
 /* =========================
-   MENU / NAVBAR 
+   MENU / NAVBAR
 ========================= */
 if (menu && navbar) {
   menu.addEventListener('click', () => {
@@ -26,7 +30,7 @@ if (menu && navbar) {
 
 
 /* =========================
-   NAVBAR AUTH
+   AUTHENTIFICATION NAVBAR
 ========================= */
 const isLoggedIn = localStorage.getItem('isLoggedIn');
 
@@ -37,6 +41,40 @@ if (isLoggedIn === 'true') {
 } else {
   // Utilisateur NON connecté
   if (navProfil) navProfil.style.display = 'none';
+  if (navLogout) navLogout.style.display = 'none';
+}
+
+
+/* =========================
+   FONCTION UTILE
+========================= */
+// Fonction pour hasher un mot de passe
+async function hashPassword(password) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(password);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+
+/* =========================
+   REGISTER
+========================= */
+if (formRegister) {
+  formRegister.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const registerEmail = document.querySelector('#registerEmail').value;
+    const registerPassword = document.querySelector('#registerPassword').value;
+
+    const hashedPassword = await hashPassword(registerPassword);
+
+    localStorage.setItem('registerEmail', registerEmail);
+    localStorage.setItem('registerPassword', hashedPassword); // stocke le hash
+
+    window.location.href = 'login.html';
+  });
 }
 
 
@@ -44,7 +82,7 @@ if (isLoggedIn === 'true') {
    LOGIN
 ========================= */
 if (formLogin) {
-  formLogin.addEventListener('submit', (e) => {
+  formLogin.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const registerEmail = localStorage.getItem('registerEmail');
@@ -53,12 +91,12 @@ if (formLogin) {
     const loginEmail = document.querySelector('#loginEmail').value;
     const loginPassword = document.querySelector('#loginPassword').value;
 
-    localStorage.setItem('loginEmail', loginEmail);
-    localStorage.setItem('loginPassword', loginPassword);
+    const hashedLoginPass = await hashPassword(loginPassword);
 
-    if (loginEmail === registerEmail && loginPassword === registerPass) {
-
+    if (loginEmail === registerEmail && hashedLoginPass === registerPass) {
+      // Utilisateur connecté
       localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('loginEmail', loginEmail);
 
       if (profilEmail && profilName) {
         profilEmail.textContent = "Bienvenue " + loginEmail;
@@ -66,31 +104,22 @@ if (formLogin) {
       }
 
       window.location.href = 'profil.html';
-
     } else {
+      // Identifiants incorrects
+      if (formLogin) {
+        formLogin.style.border = "2px solid red";
+
+        // Remet la bordure normale après 2 secondes
+        setTimeout(() => {
+          formLogin.style.border = "";
+        }, 2000);
+      }
+
       if (profilEmail && profilName) {
         profilEmail.textContent = "Vous devez vous connecter";
         profilName.textContent = "Accès refusé";
       }
     }
-  });
-}
-
-
-/* =========================
-   REGISTER
-========================= */
-if (formRegister) {
-  formRegister.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const registerEmail = document.querySelector('#registerEmail').value;
-    const registerPassword = document.querySelector('#registerPassword').value;
-
-    localStorage.setItem('registerEmail', registerEmail);
-    localStorage.setItem('registerPassword', registerPassword);
-
-    window.location.href = 'login.html';
   });
 }
 
@@ -108,4 +137,58 @@ if (profilName && profilEmail) {
     profilEmail.textContent = "Vous devez vous connecter";
     profilName.textContent = "Accès refusé";
   }
+}
+
+
+const slides = [
+    { img: "profilImages/abdul.png", text: "Super expérience ! Abdul a adoré le programme et a bien progressé.", stars: 5 },
+    { img: "profilImages/jerome.png", text: "Excellent coaching, très motivant ! Jerome est ravi.", stars: 4 },
+    { img: "profilImages/muhammad.png", text: "Muhammad a trouvé ça top, très satisfait des résultats.", stars: 5 },
+    { img: "profilImages/sophia.png", text: "Sophia recommande vivement, vraiment inspirant et persévérant !", stars: 5 },
+    { img: "profilImages/john.png", text: "John a adoré, formateur efficace et sympathique.", stars: 4 }
+];
+
+let currentIndex = 0;
+
+function showSlide() {
+    if (!sliderDiv) return;
+
+    const slide = slides[currentIndex];
+
+    // Génère les étoiles
+    let starsHtml = "★".repeat(slide.stars) + "☆".repeat(5 - slide.stars);
+
+    // Remplace le contenu par image + texte + étoiles
+    sliderDiv.innerHTML = `
+        <img src="${slide.img}" alt="profil">
+        <div class="comment">
+            <div class="stars">${starsHtml}</div>
+            <div class="text">${slide.text}</div>
+        </div>
+    `;
+
+    currentIndex = (currentIndex + 1) % slides.length;
+}
+
+// Initialisation
+showSlide();
+setInterval(showSlide, 5000);
+
+/* =========================
+   DECONNECTION
+========================= */
+if (navLogout) {
+  navLogout.addEventListener('click', (e) => {
+    e.preventDefault(); // Empêche le lien de naviguer immédiatement
+
+    const confirmed = confirm("Voulez-vous vraiment vous déconnecter ?");
+    if (confirmed) {
+      // Supprime les infos de connexion
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('loginEmail');
+
+      // Redirection vers login ou accueil
+      window.location.href = 'login.html';
+    }
+  });
 }
