@@ -38,6 +38,7 @@ if (isLoggedIn === 'true') {
   // Utilisateur connecté
   if (navLogin) navLogin.style.display = 'none';
   if (navRegister) navRegister.style.display = 'none';
+  if (navbar) navbar.style.backgroundColor = '#3a48c5ff';
 } else {
   // Utilisateur NON connecté
   if (navProfil) navProfil.style.display = 'none';

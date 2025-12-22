@@ -186,7 +186,25 @@ body::-webkit-scrollbar {
 
 .SectionProfil{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.logoLion{
+  margin: 10px;
+  width: 500px;;
+
+}
+.logoLogout {
+
+  transition: background-color 0.3s;
+}
+
+.logoLogout:hover {
+  background-color: red;
+}
+
+
 #slider {
     width: 70%;
     max-width: 1000px;
@@ -194,7 +212,7 @@ body::-webkit-scrollbar {
     padding: 20px;
     margin: 100px auto;
     background: #fafafa;
-    border-radius: 10px; /* carré arrondi légèrement */
+    border-radius: 10px; 
     box-shadow: 0 6px 15px rgba(0,0,0,0.4);
     display: flex;
     align-items: flex-start;
@@ -292,8 +310,12 @@ input:focus {
   transition: transform 0.3s ease;
 }
 
+
 .boxSelling img:hover {
   transform: scale(1.08);
+}
+.boxSelling {
+  text-align: center;
 }
 
 /* =========================
