@@ -1,16 +1,25 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
+
+/* =========================
+   NAVBAR 
+========================= */
 .navbar {
   position: fixed;
   top: 0;
@@ -28,28 +37,33 @@ body::-webkit-scrollbar {
   transition: ease-in-out 0.3s;
   z-index: 9999;
 }
-.navbar span{
-    font-size: 15px;
-    margin: 10px;
-    margin-bottom: 100px;
-}
 
 .navbar.showNav {
-  left: 0; 
+  left: 0;
 }
-.navbar a{
-    color: aliceblue;
-    text-decoration: none;
+
+.navbar a {
+  color: aliceblue;
+  text-decoration: none;
 }
-/* From Uiverse.io by vinodjangid07 */ 
+
+.navbar span {
+  font-size: 15px;
+  margin: 10px;
+  margin-bottom: 100px;
+}
+
+/* =========================
+   MENU BURGER 
+========================= */
 #checkbox {
   display: none;
 }
 
 .toggle {
- position: fixed;
-    top: 20px;
-    right: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -68,200 +82,178 @@ body::-webkit-scrollbar {
   border-radius: 4px;
 }
 
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
 #bar2 {
   transition-duration: .8s;
 }
 
-#bar1,#bar3 {
-  width: 70%;
-}
-
 #checkbox:checked + .toggle .bars {
   position: absolute;
-  transition-duration: .5s;
 }
 
 #checkbox:checked + .toggle #bar2 {
   transform: scaleX(0);
-  transition-duration: .5s;
 }
 
 #checkbox:checked + .toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: .5s;
 }
 
 #checkbox:checked + .toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: .5s;
 }
 
 #checkbox:checked + .toggle {
-  transition-duration: .5s;
   transform: rotate(180deg);
 }
-.title{
-    text-align: center;
-    margin-top: 20px;
-    color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.hero{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    color: black;
+
+/* =========================
+   TITRES
+========================= */
+.title {
+  text-align: center;
+  margin: 3rem 1rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
-.imageHero{
-    width:90%;
-    height: 30%;
-    margin-top: 20px;
-    border-radius: 20px;
-     box-shadow: 2px 2px 2px 2px black;
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
-.hero p{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    margin: 15px;
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 30em;
+  color: #334155;
 }
-.logoHome{
-    color: black;
- 
-    
+
+.imageHero {
+  width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
+
+/* =========================
+   HOME ICONS / BOX
+========================= */
+.logoHome {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
 .BoxHome {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 30px;
-    border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: 1px 4px 1px rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    padding: 1em;
-    margin: 1em;
-    transition: box-shadow 0.3s ease-in-out; 
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 18em;
+  padding: 1.5em;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px 20px rgba(0,0,0,0.08);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .BoxHome:hover {
-    box-shadow: 3px 3px 6px black;
-    transform: translateY(-2px);    
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px 30px rgba(0,0,0,0.15);
 }
 
-.BoxHome span{
-    font-size: 30px;
-    margin: 10px;
+.BoxHome span {
+  font-size: 2rem;
+  color: #6366f1;
 }
 
+/* =========================
+   FORMULAIRE
+========================= */
 form {
   width: 80%;
   max-width: 500px;
-  margin: auto;
-  margin-top: 4em;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 label {
   display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 input {
   width: 100%;
-  height: 2em;
-  margin-bottom: 10px;
+  height: 2.5em;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  outline: none;
 }
-.bestseller{
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 5em;
+
+input:focus {
+  border-color: #6366f1;
 }
-.boxSelling img{
-  border: #0f172a 1px solid;
-    border-radius: 20px;
-    box-shadow: 1px 1px 1px 1px rgb(85, 85, 85);
-    width: 20em;
-    height: 16em;
-    margin: 10px;
-    gap: 201px;
-    transition: ease-in-out 0.3s;
+
+/* =========================
+   BEST SELLER
+========================= */
+.bestseller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 1rem;
+  
 }
+
+.boxSelling img {
+  width: 20em;
+  height: 16em;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
 .boxSelling img:hover {
-    transform: scale(1.1);    /* léger zoom au survol */
+  transform: scale(1.08);
 }
 
-
-
-
+/* =========================
+   RESPONSIVE DESKTOP
+========================= */
 @media (min-width: 700px) {
+
+  .hero {
+    justify-content: space-around;
+    padding: 4rem;
+  }
+
   .imageHero {
     width: 45em;
     height: 30em;
-    margin-top: 20px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px 3px black;
   }
-
-  .hero {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    color: black;
-  }
-
-  .hero p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    margin: 15px;
-    max-width: 30em;
-  }
-
-  .logoHome{
-    display:flex ;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 20px;
-    background-color: black;
-
-  }
-  .BoxHome {
-
-    width: 20em;
-    height: 5em;
-    max-width: 300em;
-    max-height: 20em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    font-size: 30px;
-    border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: 1px 5px 1px rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    padding: 1em;
-    margin: 1em;
-    transition: box-shadow 0.3s ease-in-out; 
-}
-
-.BoxHome:hover {
-    box-shadow: 3px 3px 6px black;
-    transform: translateY(-2px);    
-}
-
-.BoxHome span{
-    font-size: 30px;
-    margin: 10px;
-}
 
 }
