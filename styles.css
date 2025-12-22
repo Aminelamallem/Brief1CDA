@@ -192,7 +192,8 @@ body::-webkit-scrollbar {
 }
 .logoLion{
   margin: 10px;
-  width: 500px;;
+  width: 200px;
+  height: 350px;
 
 }
 .logoLogout {
