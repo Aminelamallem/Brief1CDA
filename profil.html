@@ -1,66 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
     <link rel="stylesheet" href="styles.css">
     <title>Traning</title>
-</head>
-<body>
-   <input class="menu" type="checkbox" id="checkbox">
-    <label  for="checkbox" class="toggle">
-        <div class="bars" id="bar1"></div>
-        <div class="bars" id="bar2"></div>
-        <div class="bars" id="bar3"></div>
+  </head>
+
+  <body>
+    <input
+      class="menu"
+      type="checkbox"
+      id="checkbox"
+    >
+
+    <label for="checkbox" class="toggle">
+      <div class="bars" id="bar1"></div>
+      <div class="bars" id="bar2"></div>
+      <div class="bars" id="bar3"></div>
     </label>
 
+    <nav class="navbar" id="navHome">
+      <a href="index.html">
+        <span>Home</span>
+        <img src="images/home.svg" alt="Home" width="40">
+      </a>
 
+      <a href="login.html" id="navLogin">
+        <span>Login</span>
+        <img src="images/login.svg" alt="Login" width="40">
+      </a>
 
-<nav class="navbar" id="navHome">
-  <a href="index.html">
-  <span>Home</span>
-    <img src="images/home.svg" alt="Home" width="40">
-  </a>
+      <a href="register.html" id="navRegister">
+        <span>Register</span>
+        <img src="images/register.svg" alt="Register" width="40">
+      </a>
 
-  <a href="login.html" id="navLogin">
-    <span>Login</span>
-    <img src="images/login.svg" alt="Login" width="40">
-  </a>
-  <a href="register.html" id="navRegister">
-    <span>Register</span> 
-    <img src="images/register.svg" alt="Register" width="40">
-  </a>
-  <a href="profil.html">
-    <span>Profil</span>
-    <img src="images/profil.svg" alt="Profil" width="40">
-  
-  </a>
- <a href="#" id="navLogout">
-  <img  class="logoLogout" src="images/logout.svg" alt="Se déconnecter de votre compte" width="40">
-</a>
+      <a href="profil.html">
+        <span>Profil</span>
+        <img src="images/profil.svg" alt="Profil" width="40">
+      </a>
 
-</nav>
+      <a href="#" id="navLogout">
+        <img
+          class="logoLogout"
+          src="images/logout.svg"
+          alt="Se déconnecter de votre compte"
+          width="40"
+        >
+      </a>
+    </nav>
 
-<section class="SectionProfil">
-<h1 class="title">Profil</h1>
-   
-<h2 id="profilName">1</h2>
-<h2 id="profilEmail">2</h2>
+    <section class="SectionProfil">
+      <h1 class="title">Profil</h1>
 
-<model-viewer class="logoLion"
-    src="images/231099b54bbd7fa5367802355d17a218.glb" 
-    alt="Logo 3D" 
-    auto-rotate 
-    camera-controls 
-  >
-  </model-viewer>
-</section>
+      <h2 id="profilName">1</h2>
+      <h2 id="profilEmail">2</h2>
 
+      <model-viewer
+        class="logoLion"
+        src="images/231099b54bbd7fa5367802355d17a218.glb"
+        alt="Logo 3D"
+        auto-rotate
+        camera-controls
+      >
+      </model-viewer>
+    </section>
 
+    <script src="js/navbar.js"></script>
+<script src="js/profil.js"></script>
+<script src="js/logout.js"></script>
 
-
-<script src="script.js"></script>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </body>
 </html>

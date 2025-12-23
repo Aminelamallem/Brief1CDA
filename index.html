@@ -1,93 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
     <link rel="stylesheet" href="styles.css">
     <title>Traning</title>
-</head>
-<body>
+  </head>
 
- <input class="menu" type="checkbox" id="checkbox">
-    <label  for="checkbox" class="toggle">
-        <div class="bars" id="bar1"></div>
-        <div class="bars" id="bar2"></div>
-        <div class="bars" id="bar3"></div>
+  <body>
+    <input
+      class="menu"
+      type="checkbox"
+      id="checkbox"
+    >
+
+    <label for="checkbox" class="toggle">
+      <div class="bars" id="bar1"></div>
+      <div class="bars" id="bar2"></div>
+      <div class="bars" id="bar3"></div>
     </label>
 
-<nav class="navbar" id="navHome">
-  <a href="index.html">
-  <span>Home</span>
-    <img src="images/home.svg" alt="Home" width="40">
-  </a>
+    <nav class="navbar" id="navHome">
+      <a href="index.html">
+        <span>Home</span>
+        <img src="images/home.svg" alt="Home" width="40">
+      </a>
 
-  <a href="login.html" id="navLogin">
-    <span>Login</span>
-    <img src="images/login.svg" alt="Login" width="40">
-  </a>
-  <a href="register.html" id="navRegister">
-    <span>Register</span> 
-    <img src="images/register.svg" alt="Register" width="40">
-  </a>
-  <a href="profil.html" id="navProfil">
-    <span>Profil</span>
-    <img src="images/profil.svg" alt="Profil" width="40">
-  
-  </a>
- <a href="#" id="navLogout">
-  <img class="logoLogout" src="images/logout.svg" alt="Se déconnecter de votre compte" width="40">
-</a>
+      <a href="login.html" id="navLogin">
+        <span>Login</span>
+        <img src="images/login.svg" alt="Login" width="40">
+      </a>
 
-</nav>
+      <a href="register.html" id="navRegister">
+        <span>Register</span>
+        <img src="images/register.svg" alt="Register" width="40">
+      </a>
 
-<h1 class="title">Home</h1>
-<section class="hero">
-  <img class="imageHero" src="images/wresling.png" alt="dumpbell">
- <p>
-  Bienvenue sur le site officiel de notre salle de lutte <strong>White Wrestling</strong>.
-  Nous proposons des entraînements et des stages de lutte encadrés par des coachs qualifiés,
-  dans un environnement motivant et accessible à tous les niveaux.
-</p>
+      <a href="profil.html" id="navProfil">
+        <span>Profil</span>
+        <img src="images/profil.svg" alt="Profil" width="40">
+      </a>
 
+      <a href="#" id="navLogout">
+        <img
+          class="logoLogout"
+          src="images/logout.svg"
+          alt="Se déconnecter de votre compte"
+          width="40"
+        >
+      </a>
+    </nav>
 
+    <h1 class="title">Home</h1>
 
-</section>
+    <section class="hero">
+      <img
+        class="imageHero"
+        src="images/wresling.png"
+        alt="dumpbell"
+      >
 
-<section class="logoHome">
-  <div class="BoxHome">
-    <span>Training</span>
-    <img src="images/dumbbell.svg" alt="logo" width="100">
-  </div>
-  <div class="BoxHome">
-    <img src="images/thunder.svg" alt="logo" width="100">
-    <span>Motivation</span>
-  </div>
-  <div class="BoxHome">
-    <span>Healthy</span>
-    <img src="images/spoon.svg" alt="logo" width="100">
-  </div>
-</section>
+      <p>
+        Bienvenue sur le site officiel de notre salle de lutte
+        <strong>White Wrestling</strong>.
+        Nous proposons des entraînements et des stages de lutte encadrés par des coachs qualifiés,
+        dans un environnement motivant et accessible à tous les niveaux.
+      </p>
+    </section>
 
-<div id="slider"></div>
+    <section class="logoHome">
+      <div class="BoxHome">
+        <span>Training</span>
+        <img src="images/dumbbell.svg" alt="logo" width="100">
+      </div>
 
-<section class="hero">
-  <p>
-  Stages de lutte en Algérie et au Maroc, accessibles à tous niveaux,
-  encadrés par des professionnels pour progresser et performer.
-</p>
-<p>
-  Débutant, intermédiaire ou confirmé, notre équipe vous accompagne pour développer votre
-  technique, votre condition physique et votre performance, tout en partageant les valeurs
-  de respect, discipline et dépassement de soi.
-</p>
+      <div class="BoxHome">
+        <img src="images/thunder.svg" alt="logo" width="100">
+        <span>Motivation</span>
+      </div>
 
-  <img class="imageHero" src="images/flag.png" alt="dumpbell">
-</section>
+      <div class="BoxHome">
+        <span>Healthy</span>
+        <img src="images/spoon.svg" alt="logo" width="100">
+      </div>
+    </section>
 
-<footer class="footer">
-  <span>© 2024 Training. All rights reserved.</span>
-</footer>
+    <div id="slider"></div>
 
-<script src="script.js"></script>
-</body>
+    <section class="hero">
+    
+
+      <p>
+        Débutant, intermédiaire ou confirmé, notre équipe vous accompagne pour développer votre
+        technique, votre condition physique et votre performance, tout en partageant les valeurs
+        de respect, discipline et dépassement de soi.
+      </p>
+
+      <img
+        class="imageHero"
+        src="images/flag.png"
+        alt="dumpbell"
+      >
+    </section>
+
+    <footer class="footer">
+      <span>© 2024 Training. All rights reserved.</span>
+    </footer>
+<script src="js/navbar.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/logout.js"></script>
+
+  </body>
 </html>
