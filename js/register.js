@@ -10,25 +10,37 @@ if (formRegister) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^.{6,}$/;
 
-    if (!emailRegex.test(registerEmail)) {
-      wrongMessage.textContent = "Please enter a valid email and a password with at least 6 characters.";
-wrongMessage.style.color = "red";
+    regexRegister.textContent = "";
+    regexRegister.style.color = "";
+    formRegister.style.border = "";
 
-      formLogin.style.border = "2px solid red";
+    if (!emailRegex.test(registerEmail)) {
+      regexRegister.textContent = "Please enter a valid email and a password with at least 6 characters.";
+      regexRegister.style.color = "red";
+      formRegister.style.border = "2px solid red";
+
+      setTimeout(() => {
+        regexRegister.textContent = "";
+        formRegister.style.border = "";
+      }, 3000);
+
       return;
     }
 
     if (!passwordRegex.test(registerPassword)) {
       regexRegister.textContent = "Please enter a valid email and a password with at least 6 characters.";
-regexRegister.style.color = "red";
+      regexRegister.style.color = "red";
+      formRegister.style.border = "2px solid red";
 
-       formRegister.style.border = "2px solid red";
-       
+      setTimeout(() => {
+        regexRegister.textContent = "";
+        formRegister.style.border = "";
+      }, 2000);
+
       return;
     }
 
     const hashedPassword = await hashPassword(registerPassword);
-
     localStorage.setItem('registerEmail', registerEmail);
     localStorage.setItem('registerPassword', hashedPassword);
 

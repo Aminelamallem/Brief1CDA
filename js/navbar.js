@@ -31,3 +31,6 @@ if (isLoggedIn === 'true') {
   if (navProfil) navProfil.style.display = 'none';
   if (navLogout) navLogout.style.display = 'none';
 }
+
+
+  

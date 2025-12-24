@@ -18,6 +18,7 @@ if (formLogin) {
     if (loginEmail === registerEmail && hashedLoginPass === registerPass) {
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('loginEmail', loginEmail);
+      localStorage.setItem('loginPassword', hashedLoginPass);
       window.location.href = 'profil.html';
     } else {
       
